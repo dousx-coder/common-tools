@@ -1,12 +1,21 @@
 # 常用工具类
 
+## 1.编译
+
 ```shell
 mvn clean package install -Dmaven.test.skip=true
 ```
 
-引入
+`powershell`部分命令需要加`单引号`
 
-Maven工程
+```powershell
+mvn clean package install '-Dmaven.test.skip=true'
+```
+
+## 2. 引入
+
+1. `maven`工程
+
 ```xml
 
 <dependency>
@@ -16,7 +25,8 @@ Maven工程
 </dependency>
 ```
 
-gradle
+2. `gradle`工程
+
 ```groovy
  implementation group: 'cn.cruder', name: 'common-tools', version: '1.0-SNAPSHOT'
 ```
