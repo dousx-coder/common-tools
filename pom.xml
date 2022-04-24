@@ -18,7 +18,7 @@
         <httpclient.version>4.5.13</httpclient.version>
         <gson.version>2.9.0</gson.version>
         <commons.version>3.12.0</commons.version>
-        <fastjson.version>1.2.80</fastjson.version>
+        <fastjson2.version>2.0.1</fastjson2.version>
         <jackson.version>2.13.2</jackson.version>
     </properties>
 
@@ -48,12 +48,12 @@
             <version>${gson.version}</version>
         </dependency>
 
+        <!-- https://github.com/alibaba/fastjson2/releases/tag/2.0.1 -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>${fastjson2.version}</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
