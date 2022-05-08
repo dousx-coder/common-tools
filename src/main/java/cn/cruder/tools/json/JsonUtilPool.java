@@ -1,11 +1,12 @@
 package cn.cruder.tools.json;
 
+import cn.hutool.log.Log;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author dousx
@@ -15,10 +16,13 @@ public class JsonUtilPool {
     private JsonUtilPool() {
     }
 
+    private static final Log log = Log.get(JsonUtilPool.class);
+
     /**
-     * 获取随机数
+     * 轮询计数器
      */
-    private static final Random RANDOM = new Random();
+    private static final AtomicInteger INDEX_ATOMIC = new AtomicInteger(0);
+
 
     /**
      * Gson池大小
@@ -71,7 +75,7 @@ public class JsonUtilPool {
      * @return {@link Gson}
      */
     public synchronized static Gson getGsonInstance() {
-        return GSON_INSTANCE_POOL.get(RANDOM.nextInt() % SIZE);
+        return GSON_INSTANCE_POOL.get(getIndex());
     }
 
     /**
@@ -80,7 +84,22 @@ public class JsonUtilPool {
      * @return {@link ObjectMapper}
      */
     public synchronized static ObjectMapper getObjectMapperInstancePool() {
-        return OBJECT_MAPPER_INSTANCE_POOL.get(RANDOM.nextInt() % SIZE);
+        return OBJECT_MAPPER_INSTANCE_POOL.get(getIndex());
     }
+
+    /**
+     * 轮询获取下标
+     *
+     * @return 下标
+     */
+    private synchronized static int getIndex() {
+        int index = INDEX_ATOMIC.getAndIncrement() % SIZE;
+        if (INDEX_ATOMIC.get() >= SIZE) {
+            // 重新计数
+            INDEX_ATOMIC.set(0);
+        }
+        return index;
+    }
+
 
 }
