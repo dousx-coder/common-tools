@@ -21,13 +21,13 @@ mvn clean package install '-Dmaven.test.skip=true'
 <dependency>
     <groupId>cn.cruder</groupId>
     <artifactId>common-tools</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.20230216-21</version>
 </dependency>
 ```
 
 2. `gradle`工程
 
 ```groovy
- implementation group: 'cn.cruder', name: 'common-tools', version: '1.0-SNAPSHOT'
+ implementation group: 'cn.cruder', name: 'common-tools', version: '1.1.20230216-21'
 ```
 
