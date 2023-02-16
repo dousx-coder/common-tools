@@ -6,7 +6,7 @@
 
     <groupId>cn.cruder</groupId>
     <artifactId>common-tools</artifactId>
-    <version>1.1.20230216-21</version>
+    <version>1.1.20230216-23</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

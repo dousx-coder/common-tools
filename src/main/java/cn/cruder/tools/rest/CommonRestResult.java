@@ -1,5 +1,8 @@
 package cn.cruder.tools.rest;
 
+import cn.cruder.tools.rest.enums.RestCodeAbsEnumClass;
+import cn.cruder.tools.rest.enums.UniversalCodeEnum;
+
 import java.io.Serializable;
 
 /**
@@ -23,6 +26,29 @@ public class CommonRestResult<T> implements Serializable {
      */
     private T data;
 
+    public int getBusinessCode() {
+        return businessCode;
+    }
+
+    public void setBusinessCode(int businessCode) {
+        this.businessCode = businessCode;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 
     /**
      * 成功
@@ -113,7 +139,7 @@ public class CommonRestResult<T> implements Serializable {
     }
 
     /**
-     * 构建返回只
+     * 构建返回结果
      *
      * @param data         data
      * @param businessCode 业务状态码
@@ -129,27 +155,60 @@ public class CommonRestResult<T> implements Serializable {
         return apiResult;
     }
 
-    public int getBusinessCode() {
-        return businessCode;
+
+    /**
+     * 构建返回结果
+     *
+     * @param data     data
+     * @param codeEnum {@link RestCodeAbsEnumClass}
+     * @param <T>      数据泛型
+     * @return RestResult
+     */
+    public static <T> CommonRestResult<T> genRestResult(T data, RestCodeAbsEnumClass codeEnum) {
+        CommonRestResult<T> apiResult = new CommonRestResult<>();
+        apiResult.setBusinessCode(codeEnum.code());
+        apiResult.setData(data);
+        apiResult.setMsg(codeEnum.msg());
+        return apiResult;
     }
 
-    public void setBusinessCode(int businessCode) {
-        this.businessCode = businessCode;
+
+    /**
+     * 构建返回结果
+     *
+     * @param codeEnum {@link RestCodeAbsEnumClass}
+     * @param <T>      数据泛型
+     * @return RestResult
+     */
+    public static <T> CommonRestResult<T> genRestResult(RestCodeAbsEnumClass codeEnum) {
+        CommonRestResult<T> apiResult = new CommonRestResult<>();
+        apiResult.setBusinessCode(codeEnum.code());
+        apiResult.setMsg(codeEnum.msg());
+        apiResult.setData(null);
+        return apiResult;
     }
 
-    public String getMsg() {
-        return msg;
+
+    /**
+     * 判断当前对象{@link CommonRestResult#businessCode}是否等于{@link UniversalCodeEnum#SUCCESS}
+     */
+    public boolean isDefOk() {
+        return eq(UniversalCodeEnum.SUCCESS);
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    /**
+     * @param codeEnum 判断当前对象{@link CommonRestResult#businessCode}是否等于{@link RestCodeAbsEnumClass#code()}
+     */
+    public boolean eq(RestCodeAbsEnumClass codeEnum) {
+        return eq(codeEnum.code());
     }
 
-    public T getData() {
-        return data;
+    /**
+     * @param code 判断当前对象{@link CommonRestResult#businessCode}是否等于指定code
+     */
+    public boolean eq(int code) {
+        return this.businessCode == code;
     }
 
-    public void setData(T data) {
-        this.data = data;
-    }
+
 }
