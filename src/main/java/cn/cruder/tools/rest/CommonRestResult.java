@@ -190,23 +190,32 @@ public class CommonRestResult<T> implements Serializable {
 
 
     /**
-     * 判断当前对象{@link CommonRestResult#businessCode}是否等于{@link UniversalCodeEnum#SUCCESS}
+     * 如果这里用无参的对象方法，返回的Json会多一个字段(需要在文档中特意说明)感觉不太合适用
+     *
+     * @param restResult 是否等于{@link UniversalCodeEnum#SUCCESS}
      */
-    public boolean isDefOk() {
-        return eq(UniversalCodeEnum.SUCCESS);
+    public static boolean isUniversalCodeSuccess(@SuppressWarnings("all") CommonRestResult restResult) {
+        if (restResult == null) {
+            return false;
+        }
+        return restResult.eqCode(UniversalCodeEnum.SUCCESS);
     }
+
 
     /**
      * @param codeEnum 判断当前对象{@link CommonRestResult#businessCode}是否等于{@link RestCodeAbsEnumClass#code()}
      */
-    public boolean eq(RestCodeAbsEnumClass codeEnum) {
-        return eq(codeEnum.code());
+    public boolean eqCode(RestCodeAbsEnumClass codeEnum) {
+        if (codeEnum == null) {
+            return false;
+        }
+        return eqCode(codeEnum.code());
     }
 
     /**
      * @param code 判断当前对象{@link CommonRestResult#businessCode}是否等于指定code
      */
-    public boolean eq(int code) {
+    public boolean eqCode(int code) {
         return this.businessCode == code;
     }
 
