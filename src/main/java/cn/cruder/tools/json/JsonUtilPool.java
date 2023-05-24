@@ -2,6 +2,7 @@ package cn.cruder.tools.json;
 
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.log.Log;
+import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONB;
 import com.alibaba.fastjson2.JSONObject;
@@ -272,27 +273,6 @@ public class JsonUtilPool {
         return result;
     }
 
-    /**
-     * 对象转json
-     *
-     * @param obj      对象
-     * @param excludes 需要排除的字段列表
-     * @return json字符串
-     */
-    public static String toJsonStringExcludes(Object obj, String... excludes) {
-        if (Objects.isNull(obj)) {
-            return "{}";
-        }
-        if (Objects.nonNull(excludes) && excludes.length > 0) {
-            SimplePropertyPreFilter excludeFilter = new SimplePropertyPreFilter();
-            for (String exclude : excludes) {
-                excludeFilter.getExcludes().add(exclude);
-            }
-            return JSONObject.toJSONString(obj, excludeFilter);
-        }
-        return toJsonString(obj);
-    }
-
 
     public static String toJsonStringWithNormDateTimeMs(Object obj) {
         return toJsonStringWithDateFormat(obj, DatePattern.NORM_DATETIME_MS_PATTERN);
@@ -312,7 +292,7 @@ public class JsonUtilPool {
         }
         String result = null;
         try {
-            result = JSONObject.toJSONStringWithDateFormat(obj, dateFormat);
+            result = JSON.toJSONString(obj, dateFormat);
         } catch (Throwable e) {
             try {
                 log.warn("对象转Json字符串失败[com.alibaba.fastjson.JSON] - {}", e.getMessage());
