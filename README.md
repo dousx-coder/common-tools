@@ -21,7 +21,7 @@ mvn clean package install '-Dmaven.test.skip=true'
 <dependency>
     <groupId>cn.cruder</groupId>
     <artifactId>common-tools</artifactId>
-    <version>1.1.20230405-14</version>
+    <version>1.1.20230524-22</version>
 </dependency>
 ```
 
