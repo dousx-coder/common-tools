@@ -28,6 +28,6 @@ mvn clean package install '-Dmaven.test.skip=true'
 2. `gradle`工程
 
 ```groovy
- implementation group: 'cn.cruder.dousx', name: 'common-tools', version: '1.1.20250318-13'
+ implementation group: 'cn.cruder.dousx', name: 'common-tools', version: '1.1.20250318-17'
 ```
 
