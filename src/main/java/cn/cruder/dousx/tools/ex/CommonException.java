@@ -1,7 +1,7 @@
-package cn.cruder.tools.ex;
+package cn.cruder.dousx.tools.ex;
 
-import cn.cruder.tools.rest.enums.RestCodeAbsEnumClass;
-import cn.cruder.tools.rest.enums.UniversalCodeEnum;
+import cn.cruder.dousx.tools.rest.enums.RestCodeAbsEnumClass;
+import cn.cruder.dousx.tools.rest.enums.UniversalCodeEnum;
 
 import java.io.Serializable;
 
@@ -41,11 +41,13 @@ public class CommonException extends RuntimeException implements Serializable {
     public CommonException(Throwable cause) {
         this(cause, cause.getMessage());
     }
-    public CommonException(Throwable cause,String msg) {
+
+    public CommonException(Throwable cause, String msg) {
         super(cause);
         this.code = UniversalCodeEnum.FAIL.code();
         this.message = msg;
     }
+
     public CommonException(Throwable cause, Integer code, String message) {
         super(cause);
         this.code = code;

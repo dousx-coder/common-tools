@@ -1,4 +1,4 @@
-package cn.cruder.tools.cache;
+package cn.cruder.dousx.tools.cache;
 
 import cn.hutool.log.Log;
 import com.google.common.cache.CacheBuilder;
@@ -53,16 +53,16 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 过期时间单位
-     * {@link cn.cruder.tools.cache.MemoryCache#duration}
+     * {@link MemoryCache#duration}
      */
     private TimeUnit unit;
 
 
     /**
      * 默认值,即当一个key超过3600秒没有访问时,会被清除
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#maximumSize} = 2048
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#duration} = 3600
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#unit} = {@link TimeUnit#SECONDS}
+     * <li/> {@link MemoryCache#maximumSize} = 2048
+     * <li/> {@link MemoryCache#duration} = 3600
+     * <li/> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
      */
     public MemoryCache() {
         this(DURATION_DEFAULT_VALUE, TimeUnit.SECONDS);
@@ -70,8 +70,8 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 单位 {@link TimeUnit#SECONDS}
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#maximumSize} = 2048
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#unit} = {@link TimeUnit#SECONDS}
+     * <li/> {@link MemoryCache#maximumSize} = 2048
+     * <li/> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
      *
      * @param duration 过期时间(距离最后一次访问时间)
      */
@@ -81,8 +81,8 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 单位 {@link TimeUnit#SECONDS}
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#maximumSize} = 2048
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#unit} = {@link TimeUnit#SECONDS}
+     * <li/> {@link MemoryCache#maximumSize} = 2048
+     * <li/> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
      *
      * @param cache    自定义缓存
      * @param duration 过期时间(距离最后一次访问时间)
@@ -113,7 +113,7 @@ public class MemoryCache<K, V> implements Serializable {
     }
 
     /**
-     * <li/> {@link cn.cruder.tools.cache.MemoryCache#maximumSize} = 2048
+     * <li/> {@link MemoryCache#maximumSize} = 2048
      *
      * @param duration 过期时间(距离最后一次访问时间)
      * @param unit     过期时间单位

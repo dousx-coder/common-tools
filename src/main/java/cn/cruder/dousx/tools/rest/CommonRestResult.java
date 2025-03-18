@@ -1,7 +1,7 @@
-package cn.cruder.tools.rest;
+package cn.cruder.dousx.tools.rest;
 
-import cn.cruder.tools.rest.enums.RestCodeAbsEnumClass;
-import cn.cruder.tools.rest.enums.UniversalCodeEnum;
+import cn.cruder.dousx.tools.rest.enums.RestCodeAbsEnumClass;
+import cn.cruder.dousx.tools.rest.enums.UniversalCodeEnum;
 
 import java.io.Serializable;
 

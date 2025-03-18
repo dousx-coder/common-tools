@@ -1,4 +1,4 @@
-package cn.cruder.tools.io;
+package cn.cruder.dousx.tools.io;
 
 import java.io.*;
 

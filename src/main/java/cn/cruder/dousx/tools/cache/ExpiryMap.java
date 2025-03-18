@@ -1,4 +1,4 @@
-package cn.cruder.tools.cache;
+package cn.cruder.dousx.tools.cache;
 
 import java.util.Collection;
 import java.util.Iterator;

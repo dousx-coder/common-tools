@@ -1,4 +1,4 @@
-package cn.cruder.tools.rest.enums;
+package cn.cruder.dousx.tools.rest.enums;
 
 /**
  * 通用业务状态码枚举
