@@ -1,14 +1,14 @@
-package cn.cruder.dousx.tools.ex;
+package io.github.dousxcoder.tools.ex;
 
-import cn.cruder.dousx.tools.rest.enums.RestCodeAbsEnumClass;
-import cn.cruder.dousx.tools.rest.enums.UniversalCodeEnum;
+import io.github.dousxcoder.tools.rest.enums.RestCodeAbsEnumClass;
+import io.github.dousxcoder.tools.rest.enums.UniversalCodeEnum;
 
 import java.io.Serializable;
 
 public class CommonException extends RuntimeException implements Serializable {
     /**
      * 错误码
-     * <br/>
+     * <br>
      * 业务码各服务自定义枚举管理起来
      */
     private Integer code;

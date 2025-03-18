@@ -1,4 +1,4 @@
-package cn.cruder.dousx.tools.cache;
+package io.github.dousxcoder.tools.cache;
 
 import cn.hutool.log.Log;
 import com.google.common.cache.CacheBuilder;
@@ -13,9 +13,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * <p>
  * 基于内存实现的过期时间Map(线程安全)
- * <p/>
  *
  * @author dousx
  */
@@ -46,7 +44,7 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 过期时间(距离最后一次访问时间)
-     * <br/>
+     * <br>
      * 单位{@link MemoryCache#unit}
      */
     private Long duration;
@@ -60,9 +58,9 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 默认值,即当一个key超过3600秒没有访问时,会被清除
-     * <li/> {@link MemoryCache#maximumSize} = 2048
-     * <li/> {@link MemoryCache#duration} = 3600
-     * <li/> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
+     * <br> {@link MemoryCache#maximumSize} = 2048
+     * <br> {@link MemoryCache#duration} = 3600
+     * <br> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
      */
     public MemoryCache() {
         this(DURATION_DEFAULT_VALUE, TimeUnit.SECONDS);
@@ -70,8 +68,8 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 单位 {@link TimeUnit#SECONDS}
-     * <li/> {@link MemoryCache#maximumSize} = 2048
-     * <li/> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
+     * <br> {@link MemoryCache#maximumSize} = 2048
+     * <br> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
      *
      * @param duration 过期时间(距离最后一次访问时间)
      */
@@ -81,8 +79,8 @@ public class MemoryCache<K, V> implements Serializable {
 
     /**
      * 单位 {@link TimeUnit#SECONDS}
-     * <li/> {@link MemoryCache#maximumSize} = 2048
-     * <li/> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
+     * <br> {@link MemoryCache#maximumSize} = 2048
+     * <br> {@link MemoryCache#unit} = {@link TimeUnit#SECONDS}
      *
      * @param cache    自定义缓存
      * @param duration 过期时间(距离最后一次访问时间)
@@ -113,7 +111,7 @@ public class MemoryCache<K, V> implements Serializable {
     }
 
     /**
-     * <li/> {@link MemoryCache#maximumSize} = 2048
+     * <br> {@link MemoryCache#maximumSize} = 2048
      *
      * @param duration 过期时间(距离最后一次访问时间)
      * @param unit     过期时间单位

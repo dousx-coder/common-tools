@@ -1,4 +1,4 @@
-package cn.cruder.dousx.tools.cache;
+package io.github.dousxcoder.tools.cache;
 
 import java.util.Collection;
 import java.util.Iterator;

@@ -1,13 +1,11 @@
-package cn.cruder.dousx.tools.rest.enums;
+package io.github.dousxcoder.tools.rest.enums;
 
 /**
  * 通用业务状态码枚举
- * <li/>成功 默认用10000
- * <li/>失败 默认用20000
- * <br/>
+ * <br>成功 默认用10000
+ * <br>失败 默认用20000
+ * <br>
  *
- * @Author: cruder
- * @Date: 2022/04/05/14:19
  */
 public enum UniversalCodeEnum implements RestCodeAbsEnumClass {
     /**

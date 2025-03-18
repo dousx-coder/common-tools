@@ -1,4 +1,4 @@
-package cn.cruder.dousx.tools.reflect;
+package io.github.dousxcoder.tools.reflect;
 
 import java.lang.reflect.Field;
 import java.util.*;
@@ -7,7 +7,6 @@ import java.util.*;
  * 反射工具类
  *
  * @author dousx
- * @date 2022-05-08 18:13
  */
 public class ReflectUtils {
     /**

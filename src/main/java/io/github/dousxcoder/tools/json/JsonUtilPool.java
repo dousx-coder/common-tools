@@ -1,4 +1,4 @@
-package cn.cruder.dousx.tools.json;
+package io.github.dousxcoder.tools.json;
 
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.log.Log;
@@ -18,7 +18,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author dousx
- * @date 2022-05-08 13:23
  */
 public class JsonUtilPool {
     private JsonUtilPool() {
@@ -240,7 +239,7 @@ public class JsonUtilPool {
 
     /**
      * 对象转json
-     * <br/>
+     * <br>
      * gson对于嵌套对象会报stackoverflow
      *
      * @param obj obj
@@ -277,10 +276,11 @@ public class JsonUtilPool {
 
     /**
      * 对象转json
-     * <br/>
+     * <br>
      * gson对于嵌套对象会报stackoverflow
      *
-     * @param obj obj
+     * @param obj        obj
+     * @param dateFormat dateFormat
      * @return json字符串
      */
     public static String toJsonStringWithDateFormat(Object obj, String dateFormat) {

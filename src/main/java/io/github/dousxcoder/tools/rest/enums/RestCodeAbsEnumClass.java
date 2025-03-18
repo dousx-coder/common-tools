@@ -1,12 +1,10 @@
-package cn.cruder.dousx.tools.rest.enums;
+package io.github.dousxcoder.tools.rest.enums;
 
 /**
  * 枚举实现该接口
- * <br/>
+ * <br>
  * 通用业务状态码枚举{@link UniversalCodeEnum}
  *
- * @Author: cruder
- * @Date: 2022/04/05/14:19
  */
 public interface RestCodeAbsEnumClass {
     /**

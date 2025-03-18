@@ -1,4 +1,4 @@
-package cn.cruder.dousx.tools.io;
+package io.github.dousxcoder.tools.io;
 
 import java.io.*;
 
@@ -6,7 +6,6 @@ import java.io.*;
  * 解决反序列化版本不一致问题
  *
  * @author dousx
- * @date 2022-05-08 18:17
  */
 public class CompatibleInputStream extends ObjectInputStream {
     public CompatibleInputStream(InputStream in) throws IOException {
