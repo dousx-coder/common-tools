@@ -50,6 +50,7 @@ public class CommonRestResult<T> implements Serializable {
     /**
      * 成功
      *
+     * @param <T> t
      * @return {@link CommonRestResult}
      */
     public static <T> CommonRestResult<T> ok() {

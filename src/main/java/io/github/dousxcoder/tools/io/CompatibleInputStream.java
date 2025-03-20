@@ -41,7 +41,10 @@ public class CompatibleInputStream extends ObjectInputStream {
     /**
      * 修改byte数组中对象的VersionId，返回对象
      *
+     * @param oldBytes oldBytes
      * @return {@link Object}
+     * @throws IOException            IO异常
+     * @throws ClassNotFoundException class异常
      */
     public static Object byteToObject(byte[] oldBytes) throws IOException, ClassNotFoundException {
         ByteArrayInputStream tokenByteArrayInputStream = new ByteArrayInputStream(oldBytes);
